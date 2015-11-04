@@ -15,7 +15,7 @@ class LieusController < ApplicationController
 
   # GET /lieus/new
   def new
-    @lieu = Lieu.new
+    @lieu = current_user.lieus.build
   end
 
   # GET /lieus/1/edit
@@ -25,7 +25,7 @@ class LieusController < ApplicationController
   # POST /lieus
   # POST /lieus.json
   def create
-    @lieu = current_user.lieus.new(lieu_params)
+    @lieu = current_user.lieus.build(lieu_params)
 
     respond_to do |format|
       if @lieu.save

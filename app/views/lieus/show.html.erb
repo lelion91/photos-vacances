@@ -16,7 +16,9 @@
   
 </div>
 <div class="panel-footer">
+<% if @lieu.user == current_user %>
 <%= link_to 'Modifier', edit_lieu_path(@lieu) %>
+<% end %>
 <%= link_to 'Retour', lieus_path %>
 </div>
 </div>
