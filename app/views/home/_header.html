@@ -1,0 +1,22 @@
+<header>
+<nav class="navbar haut">
+<div class="container-fluid">
+<ul class="nav navbar-nav navbar-left lien-haut">
+   <li><%= link_to 'Home', root_path %></li>
+   <li><%= link_to 'A propos', home_about_path %></li>
+</ul>
+<ul class="nav navbar-nav navbar-right lien-haut">
+
+   <li><%= link_to 'Listing lieux', lieus_path %></li>
+   <% if user_signed_in? %>
+      <li><%= link_to "Ajouter lieu", new_lieu_path %></li>
+      <li><%= link_to "Modifier le profil", edit_user_registration_path %></li>
+      <li><%= link_to "Deconnexion", destroy_user_session_path, method: :delete %></li>
+   <% else %>
+      <li><%= link_to "Connexion", new_user_session_path %></li>
+   <% end %>
+   
+</ul>
+</div>
+</nav>
+</header>

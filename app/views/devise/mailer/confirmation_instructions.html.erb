@@ -1,0 +1,12 @@
+<div class="container">
+<div class="panel panel-default">
+<div class="panel-heading">
+<p>Bienvenue <%= @email %>!</p>
+</div>
+<div class="panel-body">
+<p>Confirmer votre mail en cliquant sur le lien ci-dessous</p>
+</div>
+<div class="panel-footer">
+<p><%= link_to 'Confirmer mon compte', confirmation_url(@resource, confirmation_token: @token) %></p>
+</div>
+</div>

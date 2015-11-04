@@ -1,0 +1,32 @@
+<div class="jumbotron">
+<div class="container">
+<table class="table table-hover">
+  <thead>
+    <tr class="success">
+      <th>Lieu</th>
+      <th>Commentaire</th>
+      <th>Note</th>
+      <th>Recommandation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lieus.each do |lieu| %>
+      <tr>
+        <td><%= lieu.nom %></td>
+        <td><%= lieu.commentaire %></td>
+        <td><%= lieu.note %></td>
+        <td><%= lieu.recommandation %></td>
+        <td><%= link_to 'Montrer', lieu %></td>
+        <td><%= link_to 'Modifier', edit_lieu_path(lieu) %></td>
+        <td><%= link_to 'Effacer', lieu, method: :delete, data: { confirm: 'Etes vous sûr ?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+<br>
+
+<%= link_to 'Ajouter des Vacances', new_lieu_path %>

@@ -1,0 +1,23 @@
+<div class="container">
+
+
+<div class="panel panel-default">
+<div class="panel-heading">
+  <strong>Nom:</strong>
+  <%= @lieu.nom %>
+</div>
+<div class="panel-body">
+  <p><strong>Commentaire:</strong>
+  <%= @lieu.commentaire %></p>
+  <br>
+    <p><strong>Recommandation:</strong>
+  <%= @lieu.recommandation %></p>
+
+  
+</div>
+<div class="panel-footer">
+<%= link_to 'Modifier', edit_lieu_path(@lieu) %>
+<%= link_to 'Retour', lieus_path %>
+</div>
+</div>
+</div>
