@@ -1,7 +1,7 @@
 class LieusController < ApplicationController
   before_action :set_lieu, only: [:show, :edit, :update, :destroy]
-  #before_action :authenticate_user!, except: [:index, :show]
-  #before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /lieus
   # GET /lieus.json
   def index
@@ -25,7 +25,7 @@ class LieusController < ApplicationController
   # POST /lieus
   # POST /lieus.json
   def create
-    @lieu = Lieu.new(lieu_params)
+    @lieu = current_user.lieus.new(lieu_params)
 
     respond_to do |format|
       if @lieu.save
